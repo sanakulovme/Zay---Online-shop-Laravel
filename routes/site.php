@@ -1,36 +1,24 @@
 <?php
 use Illuminate\Support\Facades\Route;
-use App\Models\Product;
+use App\Http\Controllers\SiteController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// 
+Route::get('/', [SiteController::class, 'welcome']);
 
-Route::get('/about', function () {
-    return view('about');
-});
+// 
+Route::get('/about', [SiteController::class, 'about']);
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+// 
+Route::get('/contact', [SiteController::class, 'contact']);
 
-Route::get('/card', function () {
-    return view('card');
-});
+// 
+Route::get('/card', [SiteController::class, 'card']); 
 
+// 
+Route::get('/search?q={q}', [SiteController::class, 'search']); 
 
-// shop's
+// 
+Route::get('/dashboard', [SiteController::class, 'dashboard']);
 
-
-Route::get('/shop', function () {
-    $productList = Product::all();
-    return view('shop', compact('productList'));
-});
-
-Route::get('/shop/product/{id}', function ($id) {
-    $product = Product::findOrFail($id);
-
-    return view('shop-delail', compact('product'));
-});
 
 ?>

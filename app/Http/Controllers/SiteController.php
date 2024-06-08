@@ -1,14 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
 {
     public function welcome()
     {
-        return view('welcome');
+        $products = Product::limit(3)->get();
+        return view('welcome', compact('products'));
     }
 
     public function contact()
@@ -21,14 +22,19 @@ class SiteController extends Controller
         return view('about');
     }
 
-    public function shop()
+    public function card()
     {
-        return view('shop');
+        return view('card');
     }
-    public function components()
-    {
-        $regions = ['Toshkent', 'Fargana', 'Andijon', 'Samarqand'];
 
-        return view('components', compact('regions'));
+    public function dashboard()
+    {
+        return view('dashboard');
     }
+
+    public function search($q)
+    {
+        echo "Salom ".$q;
+    }
+
 }

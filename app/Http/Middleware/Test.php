@@ -16,7 +16,7 @@ class Test
     public function handle(Request $request, Closure $next): Response
     {
 
-        \Log::info('Test midlweer text test');
+        // \Log::info('Test midlweer text test');
         return $next($request);
     }
 }

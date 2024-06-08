@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-lg-5 mt-5">
                     <div class="card mb-3">
-                        <img class="card-img img-fluid" src="/assets/img/product_single_10.jpg" alt="Card image cap" id="product-detail">
+                        <img class="card-img img-fluid" src="/assets/img/{{ $product->img }}" alt="Card image cap" id="product-detail">
                     </div>
                     <div class="row">
                         <!--Start Controls-->
@@ -116,27 +116,19 @@
                                 <i class="fa fa-star text-warning"></i>
                                 <i class="fa fa-star text-warning"></i>
                                 <i class="fa fa-star text-secondary"></i>
-                                <span class="list-inline-item text-dark">Rating 4.8 | 36 Comments</span>
+                                <span class="list-inline-item text-dark">Rating 4.8</span>
                             </p>
                             <ul class="list-inline">
                                 <li class="list-inline-item">
                                     <h6>Brand:</h6>
                                 </li>
                                 <li class="list-inline-item">
-                                    <p class="text-muted"><strong>Easy Wear</strong></p>
+                                    <p class="text-muted"><strong>{{ $product->brand }}</strong></p>
                                 </li>
                             </ul>
 
                             <h6>Description:</h6>
                             <p>{{ $product->desc }}</p>
-                            <ul class="list-inline">
-                                <li class="list-inline-item">
-                                    <h6>Avaliable Color :</h6>
-                                </li>
-                                <li class="list-inline-item">
-                                    <p class="text-muted"><strong>White / Black</strong></p>
-                                </li>
-                            </ul>
 
                             <h6>Specification:</h6>
                             <ul class="list-unstyled pb-3">
@@ -202,21 +194,21 @@
 
             <!--Start Carousel Wrapper-->
             <div id="carousel-related-product">
-
+                @foreach($products as $product)
                 <div class="p-2 pb-3">
                     <div class="product-wap card rounded-0">
                         <div class="card rounded-0">
-                            <img class="card-img rounded-0 img-fluid" src="/assets/img/shop_08.jpg">
+                            <img class="card-img rounded-0 img-fluid" src="/assets/img/{{ $product->img }}">
                             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                 <ul class="list-unstyled">
-                                    <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="far fa-eye"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="fas fa-cart-plus"></i></a></li>
+                                    <li><a class="btn btn-success text-white" href="/shop/product/{{ $product->id }}"><i class="far fa-heart"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2" href="/shop/product/{{ $product->id }}"><i class="far fa-eye"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2" href="/shop/product/{{ $product->id }}"><i class="fas fa-cart-plus"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="card-body">
-                            <a href="shop-single.html" class="h3 text-decoration-none">Red Clothing</a>
+                            <a href="/shop/product/{{ $product->id }}" class="h3 text-decoration-none">{{ $product->title }}</a>
                             <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
                                 <li>M/L/X/XL</li>
                                 <li class="pt-2">
@@ -236,12 +228,13 @@
                                     <i class="text-muted fa fa-star"></i>
                                 </li>
                             </ul>
-                            <p class="text-center mb-0">$20.00</p>
+                            <p class="text-center mb-0">{{ $product->pricing }}</p>
                         </div>
                     </div>
                 </div>
+                @endforeach
 
-                <div class="p-2 pb-3">
+                <!-- <div class="p-2 pb-3">
                     <div class="product-wap card rounded-0">
                         <div class="card rounded-0">
                             <img class="card-img rounded-0 img-fluid" src="/assets/img/shop_09.jpg">
@@ -657,7 +650,7 @@
                             <p class="text-center mb-0">$300.00</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
             </div>
 

@@ -113,7 +113,7 @@ https://templatemo.com/tm-559-zay-shop
             <div class="w-100 pt-1 mb-5 text-right">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="" method="get" class="modal-content modal-body border-0 p-0">
+            <form action="/search" method="get" class="modal-content modal-body border-0 p-0">
                 <div class="input-group mb-2">
                     <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
                     <button type="submit" class="input-group-text bg-success text-light">
@@ -157,26 +157,25 @@ https://templatemo.com/tm-559-zay-shop
                 </div>
 
                 <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-light border-bottom pb-3 border-light">Products</h2>
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Categories</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="#">Luxury</a></li>
-                        <li><a class="text-decoration-none" href="#">Sport Wear</a></li>
-                        <li><a class="text-decoration-none" href="#">Men's Shoes</a></li>
-                        <li><a class="text-decoration-none" href="#">Women's Shoes</a></li>
-                        <li><a class="text-decoration-none" href="#">Popular Dress</a></li>
-                        <li><a class="text-decoration-none" href="#">Gym Accessories</a></li>
-                        <li><a class="text-decoration-none" href="#">Sport Shoes</a></li>
+                        <li><a class="text-decoration-none" href="/shop/category/luxury">Luxury</a></li>
+                        <li><a class="text-decoration-none" href="/shop/category/sport-wear">Sport Wear</a></li>
+                        <li><a class="text-decoration-none" href="/shop/category/mens-shoes">Men's Shoes</a></li>
+                        <li><a class="text-decoration-none" href="/shop/category/womens-shoes">Women's Shoes</a></li>
+                        <li><a class="text-decoration-none" href="/shop/category/popular-dress">Popular Dress</a></li>
+                        <li><a class="text-decoration-none" href="/shop/category/gym-accessories">Gym Accessories</a></li>
+                        <li><a class="text-decoration-none" href="/shop/category/sport-shoes">Sport Shoes</a></li>
                     </ul>
                 </div>
 
                 <div class="col-md-4 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="#">Home</a></li>
-                        <li><a class="text-decoration-none" href="#">About Us</a></li>
-                        <li><a class="text-decoration-none" href="#">Shop Locations</a></li>
-                        <li><a class="text-decoration-none" href="#">FAQs</a></li>
-                        <li><a class="text-decoration-none" href="#">Contact</a></li>
+                        <li><a class="text-decoration-none" href="/">Home</a></li>
+                        <li><a class="text-decoration-none" href="/about">About Us</a></li>
+                        <li><a class="text-decoration-none" href="/shop">Shop</a></li>
+                        <li><a class="text-decoration-none" href="/contact">Contact</a></li>
                     </ul>
                 </div>
 

@@ -13,21 +13,12 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+ 
+// for site (main) routes and paramets
 require __DIR__.'/site.php';
 
-Route::get('/admin/dashboard', function () {
-    return view('admin/dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// for shop(product)s routes
+require __DIR__.'/shop.php';
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
+// for authentication routes with breeze
 require __DIR__.'/auth.php';
