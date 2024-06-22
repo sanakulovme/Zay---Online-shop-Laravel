@@ -18,7 +18,7 @@ Route::get('/card', [SiteController::class, 'card']);
 Route::get('/search?q={q}', [SiteController::class, 'search']); 
 
 // 
-Route::get('/dashboard', [SiteController::class, 'dashboard']);
+Route::get('/dashboard', [SiteController::class, 'dashboard'])->name('user-dashboard');
 
 
 ?>
