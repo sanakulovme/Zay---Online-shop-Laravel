@@ -7,21 +7,34 @@ use Illuminate\Http\Request;
 
 class ShopController extends Controller
 {
+    public $productList = false;
+    public $products = false;
+
+    public function __construct()
+    {
+        $this->productList = Product::all();
+        $this->products = Product::limit(12)->get();
+    }
+
     public function index()
     {
         $productList = Product::all();
-        return view('shop', compact('productList'));
+        return view('site/shop', compact('productList'));
     }
 
     public function view($id)
     {
-        $product = Product::findOrFail($id);
-        $products = Product::limit(12)->get();
-        return view('shop-delail', compact(['product', 'products']));
+        return view('site/shop-delail', [
+            'product' => Product::findOrFail($id),
+            'products' => $this->products
+        ]);
     }
 
     public function category($categoryName)
     {
-        dd($categoryName);
+        return view('category/index', [
+            'categoryName' => $categoryName,
+            'productList' => $this->productList
+        ]);
     }
 }

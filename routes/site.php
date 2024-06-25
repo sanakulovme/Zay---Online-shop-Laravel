@@ -3,7 +3,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiteController;
 
 // 
-Route::get('/', [SiteController::class, 'welcome']);
+Route::get('/', [SiteController::class, 'welcome'])->name('welcome');
 
 // 
 Route::get('/about', [SiteController::class, 'about']);
